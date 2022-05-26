@@ -1,0 +1,435 @@
+@font-face {
+    font-family: pixel-font;
+    src: url(static/pixel-font/pixel-font-7-1.ttf);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body, html {
+    height: 100%;
+    scroll-behavior: smooth;
+    background-image: linear-gradient(to right, #7b447b, #d554a7 30%, #d554a7 80%, #7b447b 100%);
+}
+
+h1 {
+    font-family: 'pixel-font', serif;
+    color: #f1d7cb;
+}
+h2 {
+    font-family: 'pixel-font', serif;
+    color: #f1d7cb;
+}
+p {
+    font-family: 'pixel-font', sans-serif;
+    color: #f1d7cb;
+}
+a {
+    font-family: 'pixel-font', sans-serif;
+    color: #f1d7cb;
+}
+
+
+/* ---- NAVBAR ---- */
+#navbar {
+    position: fixed;
+    width: 100%;
+    background-image: linear-gradient(to right, #7b447b, #d554a7 30%, #d554a7 80%, #7b447b 100%);
+    z-index: 100;
+    opacity: 0;
+}
+
+#navbar ul {
+    /* Internet Explorer do not support sticky positioning. Safari requires a -webkit- prefix (see example above).
+     You must also specify at least one of top, right, bottom or left for sticky positioning to work.
+     A sticky element toggles between relative and fixed, depending on the scroll position. It is positioned relative
+     until a given offset position is met in the viewport - then it "sticks" in place (like position:fixed).
+     position: sticky;
+    */
+    list-style-type: none;  /* Removes the bullets */
+    overflow: hidden;
+    background-color: transparent;
+}
+#navbar li {
+    float: right;
+    border-right: none;
+    display: none;
+}
+#navbar #navbar-link-hamburger {
+    float: right;
+    border-right: none;
+    display: block;
+}
+@media screen and (min-width: 600px) {
+    #navbar #navbar-link-hamburger {
+        display: none
+    }
+    #navbar li {
+        display: block;
+    }
+}
+
+#navbar #home-link {
+    display: block;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 150%;
+    overflow: hidden;
+    background-color: transparent;
+    float: left;
+    border-right: none;
+}
+
+#navbar li a {
+    display: block;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 150%;
+}
+#navbar #navbar-link-hamburger {
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 150%;
+}
+
+
+
+/* ---- HERO ---- */
+#hero,#hero-project {
+    height: calc(100vh); /* You must set a specified height */
+    min-height: 700px;
+
+    background-image: url("static/homepage.jpg");
+    background-color: black; /* Used if the image is unavailable */
+    background-position: 50% 0; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover; /* Resize the background image to cover the entire container */
+
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    align-items: flex-start;
+}
+
+#hero #hero-content {
+    text-align: center;
+    width: 100%;
+}
+#hero #hero-content img {
+    width: 70%;
+    padding-top: 124px;
+}
+
+
+#hero h1 {
+    padding: 32px 0;
+    color: white;
+    font-size: 300%;
+}
+
+#hero h2 {
+    text-align: justify;
+    color: white;
+    padding-bottom: 12px;
+    font-size: 130%;
+}
+@media screen and (min-width: 893px) {
+    #hero h2 {
+        font-size: 200%;
+    }
+}
+
+
+#hero-project {
+    justify-content: center;
+    align-items: center;
+}
+
+#hero-project #hero-content {
+    text-align: left;
+    padding: 32px;
+    width: 50%;
+}
+
+#hero-project h1 {
+    padding: 32px 0;
+    color: white;
+    font-size: 300%;
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 1) 50%, rgba(0, 0, 0, 0.3) 100%);
+    background-size: 100% 100%;
+    background-position: 50% 100%;
+    background-repeat: no-repeat;
+    text-align: center;
+    border-radius: 50%;
+}
+
+#hero-project h2 {
+    text-align: justify;
+    color: white;
+}
+
+
+/* ---- DEMO ---- */
+#demo {
+    display:block;
+    margin: auto;
+    width: fit-content;
+}
+
+#demo h1 {
+    font-size: 412%;
+    text-align: center;
+    padding-top: 100px;
+    padding-bottom: 0px;
+}
+#demo video {
+    padding: 64px;
+    width: 90%;
+}
+#demo p {
+    padding: 0 128px 0 128px;
+    font-size: 200%;
+    text-align: justify;
+}
+
+
+/* ---- PROJECTS ---- */
+#projects h1 {
+    text-align: center;
+    padding-top: 100px;
+    padding-bottom: 32px;
+    font-size: 512%;
+}
+#projects h2 {
+    text-align: center;
+    font-weight: normal;
+    padding-bottom: 32px;
+    font-size: 200%;
+}
+
+
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+.column {
+    margin-top: 32px;
+    margin-bottom: 32px;
+    flex: 0 1 calc(100% - 64px);
+}
+@media screen and (min-width: 600px) {
+   .column {
+        flex: 0 1 calc(50% - 64px);  /* Take 50% and space evenly with 64px space. */
+    }
+}
+@media screen and (min-width: 1000px) {
+   .column {
+        flex: 0 1 calc(33% - 64px)
+    }
+}
+
+
+.column p {
+    margin: 15px;
+    text-align: center;
+}
+
+.card {
+    aspect-ratio: 1 / 1;
+    border-radius: 8px;
+
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+.card img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+    border-radius: 8px;
+}
+
+
+
+/* ---- PROJECT ---- */
+#project {
+    min-height: calc(100% - 32px);
+    padding: 16px 32px 16px 32px;
+    background: #eaeaea;
+}
+
+#project h1 {
+    text-align: center;
+    padding-top: 128px;
+    padding-bottom: 16px;
+    font-size: 75px;
+}
+#project h2 {
+    text-align: center;
+    font-weight: normal;
+    padding-bottom: 32px;
+}
+
+#project p {
+    font-size: 200%;
+    text-align: justify;
+}
+
+#project .description h1 {
+    padding-top: 64px;
+}
+
+#project .description p {
+    padding: 16px 10%;
+}
+
+#project .description:last-child p:last-child {
+    padding-bottom: 128px;
+}
+
+
+
+/* ---- SKILLS ---- */
+#team {
+    font-size: 512%;
+}
+#skills {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    padding-top: 64px;
+    padding-bottom: 64px;
+}
+.skill {
+    text-align: center;
+    margin-bottom: 32px;
+    flex: 0 1 calc(100% - 64px);
+}
+@media screen and (min-width: 600px) {
+   .skill {
+        flex: 0 1 calc(50% - 64px);  /* Take 50% and space evenly with 64px space. */
+    }
+}
+@media screen and (min-width: 1000px) {
+   .skill {
+        flex: 0 1 calc(33% - 64px)
+    }
+}
+
+.skill h2 {
+  margin: 0 8px 8px 8px;
+}
+.skill img {
+    width: 100%;
+}
+
+
+
+
+/* ---- IMAGE WITH OVERLAY ---- */
+/*https://stackoverflow.com/questions/18322548/black-transparent-overlay-on-image-hover-with-only-css*/
+/*https://stackoverflow.com/questions/13742416/darken-img-while-exposing-text-on-hover*/
+.image {
+    position:relative;
+    width: 100%;
+    height: 100%;
+}
+.image img {
+    width:100%;
+    vertical-align:top;
+}
+
+/* Overlay */
+.image:after {
+    position:absolute;
+    opacity:0;
+    transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+
+    content: '\A';
+    width:   100%;
+    height:  100%;
+    top:  0;
+    left: 0;
+    background: rgba(0,0,0,0.6);
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.4);
+    border-radius: 8px;
+}
+.image:hover:after {
+    opacity:1;
+}
+
+.project-text {
+    position: absolute;
+    margin-top: 30%;
+    width: 100%;
+
+    color: #fff;
+    opacity: 0;
+    visibility: hidden;
+
+    font-weight: 300;
+    font-size: 1.5rem;
+    text-align: center;
+
+    top: 50%;
+    transform: translateY(-50%);
+    transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+}
+.image:hover .project-text {
+    margin-top: 0;
+    opacity: 1;
+    visibility: visible;
+    z-index: 1;
+}
+
+
+
+
+
+/* ---- CONTACT ---- */
+#contact {
+    position: static;
+    min-height: calc(100% - 32px);
+
+    font-size: 150%;
+
+    display: flex;
+    justify-content: center; /* align horizontal */
+    align-items: center; /* align vertical */
+    flex-direction: column;
+
+    text-align: center;
+    color: black;
+    text-decoration: none;
+
+    background: #eaeaea;
+}
+
+#contact h1 {
+    padding: 128px 128px 32px 128px;
+}
+
+#contact p {
+    padding: 64px 64px 32px;
+    transform: translateY(-25%);
+}
+
+
+.skill ul {
+    text-decoration: none;
+    list-style-type: none;
+}
+
+.mail-button a:hover {
+    color: cornflowerblue;
+    z-index: 1;
+}
+

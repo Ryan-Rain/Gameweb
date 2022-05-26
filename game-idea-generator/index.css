@@ -1,0 +1,81 @@
+body {
+	background-color: #222222;
+}
+
+.github {
+	touch-action: manipulation;
+
+	/* Disable text selection: https://stackoverflow.com/questions/826782/how-to-disable-text-selection-highlighting */
+	-webkit-touch-callout:	none;  /* iOS Safari */
+	-webkit-user-select:	none;  /* Safari */
+	-moz-user-select: 		none;  /* Old versions of Firefox */
+	-ms-user-select: 		none;  /* Internet Explorer/Edge */
+	user-select: 			none;  /* Chrome, Opera and Firefox */
+}
+.github img {
+	border-radius: 25%;
+}
+
+.output {
+	font-family: "Courier New", serif;
+	font-size: 25px;
+
+	color: white;
+	text-align: center;
+
+	position: fixed;
+	width: 90%;
+	top:   40%;
+	left:  50%;
+	transform: translate(-50%, -50%);
+}
+
+.button {
+	background-color: rgb(72%, 34%, 49%);
+	color: white;
+
+	font-family: "Courier New", serif;
+	font-size:   25px;
+	text-align:  center;
+	padding:     10px 0px;
+
+
+	border: none;
+
+	outline-style:none;
+	cursor:pointer;
+
+	position: fixed;
+	width:	  50%;
+	bottom:	  10%;
+	left:	  25%;
+
+	/* Disable text selection: https://stackoverflow.com/questions/826782/how-to-disable-text-selection-highlighting */
+	-webkit-touch-callout:	none;  /* iOS Safari */
+	-webkit-user-select:	none;  /* Safari */
+	-moz-user-select: 		none;  /* Old versions of Firefox */
+	-ms-user-select: 		none;  /* Internet Explorer/Edge */
+	user-select: 			none;  /* Chrome, Opera and Firefox */
+
+	/* Prevent double-tapping on button from zooming page on mobile: https://developer.mozilla.org/en-US/docs/Web/CSS/touch-action */
+	touch-action: manipulation;
+}
+
+.button:hover {
+  background-color: rgb(80%, 42%, 57%);
+}
+.button:active {
+  background-color: rgb(88%, 50%, 65%);
+}
+
+.output span {
+  opacity: 0;
+  filter: blur(4px);
+
+}
+@keyframes fade-in {
+  100% {
+    opacity: 1;
+    filter: blur(0);
+  }
+}
